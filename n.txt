@@ -1,0 +1,11 @@
+dbscan.py
+dendo.py
+kmean1d.py
+kmean2d.py
+knn.py
+knnh.py
+linearreg.py
+logireg.py
+logiregh.py
+pca.py
+polyreg.py
