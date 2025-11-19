@@ -1,0 +1,44 @@
+PAM
+Aspect,Details
+Definition,"A simple, non-parametric lazy learning algorithm used for both classification and regression. It makes predictions based on the class or value of its K nearest neighbors in the feature space."
+Formula,KNN uses distance metrics (like Euclidean or Manhattan distance) to find the nearest neighbors.  For Classification: The new point is assigned the class that represents the majority among its K nearest neighbors (a majority vote).
+Where and How it is Used,"It is used for making predictions without any explicit training phase (hence ""lazy"").  How it works: When a new data point arrives, the algorithm calculates its distance to every point in the training set and selects the K points closest to it."
+Example Questions in Practical Exam,"* ""Implement KNN with K=5 using Euclidean distance to classify an unlabeled dataset.""  * ""Write a function that determines the optimal value of K for a given classification problem."""
+Real-Life Application,"Recommendation Systems: Suggesting a movie to a user based on the preferences of their closest ""neighbor"" users. Credit Risk Assessment: Approving a loan if the applicant is similar to K previously successful borrowers."
+
+
+CLARA (Clustering Large Applications)
+Aspect,Details
+Definition,An extension of the PAM algorithm designed to handle very large datasets.
+Formula,"Like PAM, the goal is to minimize the total cost. However, the cost calculation is done by applying the PAM process only to a random sample of the data."
+Where and How it is Used,"It is used when a dataset is too large for standard PAM (which is computationally expensive and slow for big data). How it works: CLARA repeatedly takes small random samples from the full dataset, runs PAM on each sample, and selects the best set of medoids found across all samples. Finally, it assigns the entire dataset to these best sample-derived medoids."
+Example Questions in Practical Exam,"* ""Simulate the CLARA algorithm on a large dataset by taking a random subset of size S and running the medoid selection only on that subset.""  * ""Demonstrate how the final cluster assignment for the whole dataset is based on medoids chosen only from the sample."""
+Real-Life Application,Segmenting millions of customers in an e-commerce platform where efficiency and speed are critical due to large data volume.
+
+
+. CLARANS (Clustering Large Applications based on Randomized Search)
+Aspect,Details
+Definition,An improved version of PAM that addresses the speed issues of PAM and the sample dependency of CLARA by using a randomized search strategy.
+Formula,The objective is to minimize the total clustering cost. It uses the same cost function as PAM.
+Where and How it is Used,"CLARANS is generally faster and more scalable than PAM and CLARA. How it works: Instead of checking every possible swap candidate (like standard PAM), CLARANS limits the search space by only checking a small, random number of neighbors (swaps) for each initial medoid set. If a swap decreases the cost, the medoid set is updated; otherwise, it stops the local search and restarts with a new random set."
+Example Questions in Practical Exam,"* ""Implement the CLARANS algorithm and define parameters for numLocal (number of initial searches) and maxNeighbor (maximum swaps per search) to limit computational time.""  * ""Demonstrate the efficiency gain of CLARANS over PAM by limiting the number of checks performed in the swap step."""
+Real-Life Application,"Real-time recommendation clustering in platforms like Netflix, where data frequently updates and requires fast clustering without exhaustive search."
+
+
+
+. LDA (Linear Discriminant Analysis)
+Aspect,Details
+Definition,A supervised dimensionality reduction technique used to find a linear combination of features that best separates two or more classes.
+Formula,LDA seeks to maximize the ratio of the between-class variance to the within-class variance  (maximizing separation while minimizing spread within the classes).
+Where and How it is Used,"It is primarily used as a preprocessing step before classification. Unlike PCA (which ignores class labels), LDA uses the class labels (Y) to ensure the new dimensions are maximally discriminative. It projects the high-dimensional data onto a lower-dimensional space (up to K−1 dimensions, where K is the number of classes)."
+Example Questions in Practical Exam,"* ""Implement LDA to reduce a multi-class dataset down to K−1 dimensions and visualize the separation.""  * ""Compare the classification accuracy of a model before and after applying LDA for dimensionality reduction."""
+Real-Life Application,"Face Recognition: Improving accuracy by extracting the most discriminative features for classification. Customer Classification: Maximizing the separation between groups of customers (e.g., high-value vs. low-value)."
+
+
+. SVD (Singular Value Decomposition)
+Aspect,Details
+Definition,"A matrix factorization technique that decomposes any matrix A into the product of three other matrices: an orthogonal matrix U, a diagonal matrix Σ (Sigma), and the transpose of an orthogonal matrix V."
+Formula,"A=UΣVT Where U and V are orthogonal matrices, and Σ is a diagonal matrix containing the singular values of A."
+Where and How it is Used,"SVD is used for several key purposes, including dimensionality reduction (as it is the basis for PCA), noise reduction, and matrix inversion.  How it works: By keeping only the largest singular values in Σ and setting the rest to zero, you can reconstruct a highly accurate, lower-rank approximation of the original matrix A."
+Example Questions in Practical Exam,"* ""Implement SVD on a matrix and demonstrate image compression by using only the top 10 singular values to reconstruct the image.""  * ""Use SVD to compute the pseudo-inverse of a non-square matrix."""
+Real-Life Application,Image Compression (data reduction). Recommender Systems (used in Collaborative Filtering to find latent factors). Latent Semantic Analysis (LSA) in natural language processing.

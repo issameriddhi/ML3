@@ -1,0 +1,45 @@
+Aspect,Details
+Linear regression
+Definition,A statistical model used to predict the value of a continuous dependent variable (Y) based on the value of one or more independent variables (X) by fitting the best straight line to the data.
+Formula,"For simple linear regression (one X): Y=β0​+β1​X+ϵ Where β0​ is the intercept, β1​ is the coefficient (slope), and ϵ is the error term."
+Where and How it is Used,It is used when a linear relationship between the variables is assumed. The algorithm works by finding the values of β0​ and β1​ that minimize the Residual Sum of Squares (RSS) (the difference between the actual Y values and the predicted Y^ values).
+Example Questions in Practical Exam,"* ""Implement a model to predict the annual income (a continuous value) of employees based on their years of experience."" * ""Given a dataset of house sizes and prices, fit a model to find the relationship and predict the price for a new house size."""
+Real-Life Application,"Forecasting sales based on advertising spend, predicting temperature based on altitude, or estimating crop yield based on rainfall."
+
+
+Logistic regression
+Aspect,Details
+Definition,"A classification algorithm used to estimate the probability of a categorical outcome (most commonly, a binary outcome like 0 or 1, Yes or No)."
+Formula,It uses the linear model output z=β0​+β1​X and passes it through the Sigmoid (or Logistic) Function to squash the result between 0 and 1 (a probability): P(Y=1)=1+e−z1​
+Where and How it is Used,"It's used for binary classification problems. The output probability P(Y=1) is compared against a threshold (usually 0.5); if above the threshold, the observation is classified as 1, otherwise 0."
+Example Questions in Practical Exam,"* ""Implement a model to classify a bank customer as likely to default or not default on a loan."" * ""Using a sentiment analysis dataset, build a model to determine if a customer review is positive or negative."""
+Real-Life Application,"Spam detection (Email is spam or not spam), medical diagnosis (Patient has disease or not), and credit scoring (Loan approval decision)."
+
+
+Polynomial Regression
+Aspect,Details
+Definition,A form of Linear Regression used when the relationship between X and Y is curvilinear (non-linear). It fits a curved line instead of a straight line.
+Formula,The model introduces powers of the independent variable X as new features: Y=β0​+β1​X+β2​X2+β3​X3+⋯+βn​Xn+ϵ
+Where and How it is Used,"It's used when a simple straight line is insufficient to model the relationship (e.g., the relationship is parabolic or exponential). The core Linear Regression technique is applied after the original feature (X) is transformed into polynomial features (X2,X3, etc.)."
+Example Questions in Practical Exam,"* ""Fit a model to data that shows a U-shaped curve and determine the optimal point."" * ""Use feature transformation to predict a value where the target shows accelerated growth over time."""
+Real-Life Application,"Modeling the spread of a virus (exponential growth), determining the yield of a chemical reaction based on temperature (often parabolic), or modeling population growth over time."
+
+
+Correlation Coefficient
+Aspect,Details
+Definition,"A statistical measure that quantifies the degree to which two variables are linearly related (i.e., how strong the linear association is between them)."
+Formula,"The most common type is the Pearson Correlation Coefficient (r): r=σX​σY​Covariance(X,Y)​ The value of r always ranges from −1 to +1."
+Where and How it is Used,It is used in the data exploration phase before modeling to understand the input data.  * r=+1: Perfect positive linear relationship. * r=−1: Perfect negative linear relationship. * r=0: No linear relationship.
+Example Questions in Practical Exam,"* ""Calculate the correlation coefficient between 'Advertising Spend' and 'Sales' to determine if there is a strong linear link."" * ""Identify which two features in the dataset have the highest positive correlation."""
+Real-Life Application,"Assessing the relationship between study hours and exam scores, determining if price and demand are inversely related, or checking for multicollinearity (correlation between independent variables) in complex models."
+
+
+k-means clustering
+Aspect,Details
+Definition,"A core unsupervised learning algorithm used to partition a dataset into K distinct, non-overlapping subsets (clusters), where K is specified beforehand."
+Formula,"The goal is to minimize the Within-Cluster Sum of Squares (WCSS), which is the sum of the squared distances between each point and the mean (centroid) of its assigned cluster: $$\min \sum_{i=1}^{K} \sum_{x \in S_i}"
+Where and How it is Used,It is used when you need to find natural groupings in data that has no existing labels.  How it works: 1. Randomly place K centroids. 2. Assign every point to the nearest centroid. 3. Recalculate the position of each centroid (the mean of the assigned points). 4. Repeat steps 2 and 3 until the centroids no longer move significantly.
+Example Questions in Practical Exam,"* ""Given an unlabeled dataset, find the optimal number of clusters (K) and group the data points."" * ""Implement K-Means to segment customers based on their shopping habits (Income and Spending Score)."""
+Real-Life Application,"Customer segmentation in marketing, image compression (reducing the number of colors in an image), and document clustering (grouping similar news articles)."
+ 
+

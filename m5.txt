@@ -1,0 +1,42 @@
+dbscan
+Aspect,Details
+Definition,Density-Based Spatial Clustering of Applications with Noise (DBSCAN) is a density-based clustering algorithm that groups together closely packed points (high density) and marks points in low-density regions as outliers or noise.
+Formula,"DBSCAN does not rely on a geometric formula like minimizing distance to a center. Instead, it relies on two core parameters:  1. ϵ (Epsilon/Radius): The maximum distance between two samples for one to be considered as being in the neighborhood of the other.  2. MinPts: The number of samples (a threshold) in a neighborhood for a point to be considered a core point."
+Where and How it is Used,It's used for clustering data that has irregular shapes and when you need to specifically identify outliers. The algorithm starts at a random unvisited point and expands a cluster if the density (number of neighbors within ϵ) is high enough. Points with few neighbors are classified as noise.
+Example Questions in Practical Exam,"* ""Implement DBSCAN to cluster spatial data and identify points that do not belong to any cluster.""  * ""Cluster a set of points that form non-spherical shapes (e.g., crescent or ring shapes)."""
+Real-Life Application,Geographic Information Systems (GIS): Identifying clusters of criminal activity or traffic accidents. Anomaly Detection: Finding fraudulent credit card transactions or network intrusion attempts (as outliers).
+
+
+Decision trees
+Aspect,Details
+Definition,"A non-parametric supervised learning method used for both classification and regression. It models decisions as a tree-like structure, where internal nodes represent feature tests, branches represent outcomes, and leaf nodes represent the final decision or prediction."
+Formula,"Decision Trees primarily rely on metrics to decide the optimal split point for a node.  For Classification (ID3, C4.5): Uses Information Gain (based on entropy) to maximize information purity at each split.  For Classification (CART): Uses Gini Impurity (G=1−∑i=1c​pi2​) to measure the likelihood of a random sample being misclassified."
+Where and How it is Used,It is used for modeling complex decision-making processes because it's highly interpretable. The algorithm works by recursively partitioning the dataset into purer subsets based on the feature that yields the best metric score (highest Information Gain or lowest Gini Impurity).
+Example Questions in Practical Exam,"* ""Implement a Decision Tree to classify a dataset and visualize the resulting tree structure.""  * ""Build a model to predict whether a customer will buy a product based on Age and Income, and determine the most important splitting feature."""
+Real-Life Application,Credit Risk Assessment: Deciding whether to approve a loan based on applicant factors. Medical Diagnosis: Following a sequence of symptoms to arrive at a diagnosis.
+
+svm
+Aspect,Details
+Definition,A supervised classification algorithm that finds the optimal hyperplane (a decision boundary) that distinctly separates classes in the feature space.
+Formula,"The goal of SVM is to maximize the margin, which is the distance between the hyperplane and the closest data points (the support vectors).  The decision rule for a new point x is based on: w⋅x+b where w is the normal vector to the hyperplane and b is the offset."
+Where and How it is Used,"SVM is primarily used for binary classification but can be extended to multi-class problems. For non-linearly separable data, SVM uses the Kernel Trick to implicitly map the input features into a higher-dimensional space where they become linearly separable."
+Example Questions in Practical Exam,"* ""Implement an SVM with a Radial Basis Function (RBF) kernel to classify non-linearly separable data.""  * ""Train an SVM model and identify the support vectors used to define the margin."""
+Real-Life Application,Image Classification: Recognizing objects or faces. Handwriting Recognition: Classifying handwritten characters. Bioinformatics: Classification of genes.
+
+
+PCA
+Aspect,Details
+Definition,An unsupervised dimensionality reduction technique used to reduce a large set of correlated variables into a smaller set of uncorrelated variables called Principal Components (PCs).
+Formula,PCA works by finding the eigenvectors (principal components) of the covariance matrix of the data. The first principal component is the direction with the greatest variance in the data.
+Where and How it is Used,"PCA is used to simplify data before applying another machine learning algorithm, reducing computational cost and mitigating the ""curse of dimensionality.""  How it works: It projects the data onto a lower-dimensional subspace such that the variance of the projected data is maximized."
+Example Questions in Practical Exam,"* ""Implement PCA to reduce a 10-feature dataset down to 2 principal components.""  * ""Calculate and plot the explained variance ratio to determine how many components retain 90% of the data's information."""
+Real-Life Application,"Face Recognition: Reducing high-dimensional pixel data from images into a small set of distinguishing features (""eigenfaces""). Data Visualization: Reducing complex datasets to 2D or 3D for plotting."
+
+
+Knn
+Aspect,Details
+Definition,"A simple, non-parametric lazy learning algorithm used for both classification and regression. It makes predictions based on the class or value of its K nearest neighbors in the feature space."
+Formula,KNN uses distance metrics (like Euclidean or Manhattan distance) to find the nearest neighbors.  For Classification: The new point is assigned the class that represents the majority among its K nearest neighbors (a majority vote).
+Where and How it is Used,"It is used for making predictions without any explicit training phase (hence ""lazy"").  How it works: When a new data point arrives, the algorithm calculates its distance to every point in the training set and selects the K points closest to it."
+Example Questions in Practical Exam,"* ""Implement KNN with K=5 using Euclidean distance to classify an unlabeled dataset.""  * ""Write a function that determines the optimal value of K for a given classification problem."""
+Real-Life Application,"Recommendation Systems: Suggesting a movie to a user based on the preferences of their closest ""neighbor"" users. Credit Risk Assessment: Approving a loan if the applicant is similar to K previously successful borrowers."
